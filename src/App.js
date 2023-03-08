@@ -13,26 +13,33 @@ import Clients from "./components/Clients";
 import Contact from "./components/Contact";
 import Menu from "./components/Menu";
 
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
+
 function App() {
   return (
     <div className="App">
 
-      <Container maxWidth="sm" sx = {{ mt: 5 }}>
+      <Provider store={store}>
 
-      <BrowserRouter>
-        <Box sx = {{ mb: 3 }}>
-          <Menu />
-        </Box>
+        <Container maxWidth="sm" sx = {{ mt: 5 }}>
 
-        <Routes>
-          <Route exact path="about" element={<About />} />
-          <Route exact path="clients" element={<Clients />} />
-          <Route exact path="contact" element={<Contact />} />
-        </Routes>
+        <BrowserRouter>
+          <Box sx = {{ mb: 3 }}>
+            <Menu />
+          </Box>
 
-      </BrowserRouter>
+          <Routes>
+            <Route exact path="about" element={<About />} />
+            <Route exact path="clients" element={<Clients />} />
+            <Route exact path="contact" element={<Contact />} />
+          </Routes>
 
-      </Container>
+        </BrowserRouter>
+
+        </Container>
+
+      </Provider>
 
     </div>
   );
