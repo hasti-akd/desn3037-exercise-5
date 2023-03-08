@@ -12,6 +12,7 @@ import About from "./components/About";
 import Clients from "./components/Clients";
 import Contact from "./components/Contact";
 import Menu from "./components/Menu";
+import Counter from "./components/Counter";
 
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="about" element={<About />} />
             <Route exact path="clients" element={<Clients />} />
             <Route exact path="contact" element={<Contact />} />
+            <Route exact path="counter" element={<Counter />} />
           </Routes>
 
         </BrowserRouter>
