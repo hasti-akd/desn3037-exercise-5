@@ -1,3 +1,10 @@
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { Box, Container } from '@mui/system';
+
+
 import * as React from "react";
 
 import { Route, BrowserRouter, Routes } from "react-router-dom";
@@ -10,9 +17,12 @@ function App() {
   return (
     <div className="App">
 
-      <BrowserRouter>
+      <Container maxWidth="sm" sx = {{ mt: 5 }}>
 
-        <Menu />
+      <BrowserRouter>
+        <Box sx = {{ mb: 3 }}>
+          <Menu />
+        </Box>
 
         <Routes>
           <Route exact path="about" element={<About />} />
@@ -21,6 +31,8 @@ function App() {
         </Routes>
 
       </BrowserRouter>
+
+      </Container>
 
     </div>
   );
