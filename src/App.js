@@ -4,12 +4,15 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import About from "./components/About";
 import Clients from "./components/Clients";
 import Contact from "./components/Contact";
+import Menu from "./components/Menu";
 
 function App() {
   return (
     <div className="App">
 
       <BrowserRouter>
+
+        <Menu />
 
         <Routes>
           <Route exact path="about" element={<About />} />
