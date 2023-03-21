@@ -10,9 +10,9 @@ export default function Menu(){
 
         <div>
             <Tabs value={pathname}>
-                {/* <Tab component = {Link} to="/about" value="/about" label="About" /> */}
-                {/* <Tab component = {Link} to="/clients" value="/clients" label="Clients" /> */}
-                {/* <Tab component = {Link} to="/contact" value="/contact" label="Contact" /> */}
+                <Tab component = {Link} to="/about" value="/about" label="About" />
+                <Tab component = {Link} to="/clients" value="/clients" label="Clients" />
+                <Tab component = {Link} to="/contact" value="/contact" label="Contact" />
                 <Tab component = {Link} to="/counter" value="/counter" label="Counter" />
                 <Tab component = {Link} to="/list" value="/list" label="List" />
             </Tabs>
