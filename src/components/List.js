@@ -9,6 +9,11 @@ import { Button, TextField } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux'
 import { define as reducerDefine, add as reducerAdd, remove as reducerRemove} from '../redux/list'
 
+export function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
 export default function BasicList() {
 
     const field = useSelector((state) => state.list.field)
@@ -16,7 +21,15 @@ export default function BasicList() {
     const dispatch = useDispatch()
 
     function add(){
-        dispatch(reducerAdd(field))
+
+      if (validateEmail(field) === true){
+        dispatch(reducerAdd(field));
+        dispatch(reducerDefine(""));
+      }
+      else{
+        alert("Alert: Enter the correct email address.");
+      }
+        
     }
 
     function remove(index){
@@ -30,7 +43,7 @@ export default function BasicList() {
   return (
     <Box sx={{ width: '100%', maxWidth: '100%', bgcolor: 'background.paper' }}>
 
-    <TextField label="Name" variant="outlined" value={field} sx= {{width:'100%', mb: 2}} onChange = {(e) => {define(e.target.value)}}/>    
+    <TextField label="Email" variant="outlined" value={field} sx= {{width:'100%', mb: 2}} onChange = {(e) => {define(e.target.value)}}/>    
     <Button variant="contained" sx= {{width:'100%', mb: 1, }} onClick={(e) => {add()} }>Add</Button>   
       <Divider />
       <nav aria-label="secondary mailbox folders">
