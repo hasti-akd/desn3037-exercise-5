@@ -33,11 +33,11 @@ function App() {
           </Box>
 
           <Routes>
-            <Route exact path="about" element={<About />} />
+            {/* <Route exact path="about" element={<About />} />
             <Route exact path="clients" element={<Clients />} />
-            <Route exact path="contact" element={<Contact />} />
-            <Route exact path="counter" element={<Counter />} />
-            <Route exact path="list" element={<List />} />
+            <Route exact path="contact" element={<Contact />} /> */}
+              <Route exact path="counter" element={<Counter />} />
+              <Route exact path="list" element={<List />} />
           </Routes>
         </BrowserRouter>
 

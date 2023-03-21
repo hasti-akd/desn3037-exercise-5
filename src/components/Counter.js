@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from '../redux/counter'
 
 export default function Counter() {
+
   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
 
   return (
     <div>
-      <br></br>
       <div>
         <button
           aria-label="Increment value"
